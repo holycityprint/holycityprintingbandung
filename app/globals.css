@@ -1,26 +1,417 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================================
+   CUSTOM FONT : GRAFFITI CITY + STRETCHPRO + THEORY DISPLAY
+========================================= */
+@font-face {
+  font-family: 'GraffitiCity';
+  src: url('/fonts/Graffiti City.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'StretchPro';
+  src: url('/fonts/StretchPro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Theory Display';
+  src: url('/fonts/TheoryDisplay.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Relationship of Melodrame';
+  src: url('/fonts/Relationship-of-Melodrame.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================
+   BASE RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f5f5f5;
+  background: #000;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(0, 0, 0, 0.95) url("/texture-bg.jpg") center/cover no-repeat;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo a {
+  font-family: 'GraffitiCity', cursive;
+  font-size: 2rem;
+  color: #b8ff00;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: text-shadow 0.3s ease;
+}
+.navbar .logo a:hover {
+  text-shadow: 0 0 8px #b8ff00, 0 0 20px #b8ff00;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar a {
+  font-family: 'Theory Display', sans-serif;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.navbar a:hover {
+  color: #b8ff00;
+  text-shadow: 0 0 10px #b8ff00;
+}
+
+/* =========================================
+   BACKGROUND TEXTURE
+========================================= */
+.textured {
+  position: relative;
+  background: #000 url("/texture-bg.jpg") center/cover repeat;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  padding: 8rem 1.5rem 6rem;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-intro {
+  font-family: 'StretchPro', 'Poppins', sans-serif;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.spray-text {
+  font-family: 'GraffitiCity', cursive;
+  font-size: 4rem;
+  color: #b8ff00;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 1.2;
+  text-shadow:
+    0 0 10px #b8ff00,
+    0 0 30px #b8ff00,
+    0 0 60px rgba(184,255,0,0.6),
+    0 0 80px rgba(184,255,0,0.3);
+}
+
+.hero p {
+  max-width: 720px;
+  margin: 1.5rem auto 2rem;
+  color: #ddd;
+  font-weight: 300;
+  text-shadow: 0 0 6px rgba(184,255,0,0.2);
+}
+
+/* tombol utama WA */
+.btn {
+  display: inline-block;
+  font-family: 'Theory Display', sans-serif;
+  margin-top: 1rem;
+  padding: 0.8rem 2.2rem;
+  border: 2px solid #b8ff00;
+  border-radius: 6px;
+  color: #b8ff00;
+  background: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #b8ff00;
+  color: #000;
+  box-shadow: 0 0 20px #b8ff00;
+}
+
+/* =========================================
+   SECTION UMUM
+========================================= */
+.section-dark {
+  background: #000 url("/texture-bg.jpg") center/cover repeat;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1.5rem 4rem;
+}
+
+.section-dark h2 {
+  font-family: 'GraffitiCity', cursive; /* hanya ubah font */
+  color: #b8ff00;
+  font-size: 3.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   TEAR DIVIDER
+========================================= */
+.tear-divider {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  margin-top: -4px;
+}
+.tear-divider img {
+  width: 100%;
+  display: block;
+  transform: translateY(-1px);
+  filter: brightness(2) contrast(1.1);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* =========================================
+   PRODUCT CARDS
+========================================= */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.product-card {
+  width: 280px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  border-radius: 10px;
+  border: 1px solid #b8ff00;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 10px rgba(184,255,0,0.15);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(184,255,0,0.4);
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 260px;
+  margin-bottom: 1rem;
+}
+
+.kaos-img {
+  width: auto;
+  max-width: 80%;
+  max-height: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(184,255,0,0.25));
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .kaos-img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.price-label {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.price-graffiti {
+  font-family: 'GraffitiCity', cursive;
+  font-size: 1.6rem;
+  color: #b8ff00;
+  transform: rotate(-6deg);
+  text-shadow:
+    0 0 5px #b8ff00,
+    0 0 20px rgba(184,255,0,0.7),
+    0 0 40px rgba(184,255,0,0.4);
+  animation: sprayGlow 3s ease-in-out infinite;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background: #000 url("/texture-bg.jpg") center/cover repeat;
+  color: #888;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid #b8ff00;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .spray-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+}
+
+/* =========================================
+   ORNAMEN MESIN PRINTING (KIRI BESAR, KANAN SEDIKIT LEBIH KECIL)
+========================================= */
+.hero {
+  position: relative;
+  overflow: visible;
+}
+
+/* ukuran dasar untuk keduanya */
+.printer-ornament {
+  position: absolute;
+  bottom: -20px;
+  width: 340px;        /* ukuran kiri tetap */
+  height: auto;
+  opacity: 0.7;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 15px rgba(184,255,0,0.45));
+  transition: all 0.3s ease-in-out;
+  object-fit: contain;
+}
+
+/* kiri tidak diubah */
+.printer-ornament.left {
+  left: -65px;
+  transform: rotate(-1.5deg);
+}
+
+/* kanan sedikit lebih kecil dan sejajar rapi */
+.printer-ornament.right {
+  right: -65px;
+  width: 300px;        /* kecilkan sedikit */
+  transform: rotate(1.5deg);
+}
+
+/* efek glow saat hover */
+.hero:hover .printer-ornament {
+  opacity: 0.95;
+  filter: drop-shadow(0 0 35px rgba(184,255,0,0.6));
+}
+
+/* versi mobile */
+@media (max-width: 768px) {
+  .printer-ornament {
+    width: 200px;
+    bottom: -10px;
+    opacity: 0.55;
+  }
+  .printer-ornament.left {
+    left: -40px;
+    transform: rotate(-1deg);
+  }
+  .printer-ornament.right {
+    right: -40px;
+    width: 180px;   /* kecilkan proporsional di hp juga */
+    transform: rotate(1deg);
+  }
 }

@@ -1,0 +1,71 @@
+.about-page {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.paper-bg {
+  background: rgba(0, 0, 0, 0.6) url("/texture-bg.jpg") center/cover no-repeat;
+  border-radius: 8px;
+  padding: 3rem;
+  max-width: 850px;
+  width: 100%;
+}
+
+.about-title {
+  font-family: 'GraffitiCity', 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(169, 255, 0, 0.5);
+  margin-bottom: 2.5rem;
+}
+
+.about-text {
+  font-family: 'Relationship of Melodrame', cursive;
+  font-size: 1.3rem;
+  line-height: 1.9;
+  color: #ffffff;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: rgba(255, 255, 255, 0.5); }
+}
+
+.brand {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.highlight {
+  color: #a9ff00;
+  font-weight: 600;
+  text-shadow: 0 0 8px #a9ff00;
+}
+
+.quote {
+  font-style: italic;
+  color: #a9ff00;
+  font-weight: 700;
+  text-shadow: 0 0 12px #a9ff00;
+}
+
+@media(max-width:768px) {
+  .about-title { font-size: 2.2rem; }
+  .about-text { font-size: 1.1rem; }
+}
